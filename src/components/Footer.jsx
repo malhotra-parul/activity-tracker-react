@@ -1,17 +1,77 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+import github from "../assets/icons/icons8-github.svg";
+import twitter from "../assets/icons/icons8-twitter.svg";
+import medium from "../assets/icons/icons8-medium-new.svg";
+
+const BottomBar = styled.div`
+  height: 5vh;
+  margin: 0 auto;
+  background: #fbfbfe;
+  color: #1a0e45;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+`;
+
+const Copyright = styled.span`
+  font-size: 1em;
+`;
+
+const SocialICons = styled.a`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Image = styled.img`
+  height: 2em;
+  width: 2em;
+`;
+
+const social = [
+  {
+    id: 1,
+    icon: github,
+    link: "https://github.com/malhotra-parul",
+    handle: "Github",
+  },
+  {
+    id: 2,
+    icon: twitter,
+    link: "https://twitter.com/malhotra_parul",
+    handle: "Twitter",
+  },
+  {
+    id: 3,
+    icon: medium,
+    link: "https://medium.com/@parulm.business",
+    handle: "Medium",
+  },
+];
 
 const Footer = () => {
-    const footer = "Copyright @Parul Malhotra"
-    const socialLinks = {
-        github: "https://github.com/malhotra-parul",
-        twitter: "https://twitter.com/malhotra_parul"
-    } 
-    return (
-        <div style={{height: '5vh'}}>
-            {footer}
-    {Object.keys(socialLinks).map(social => <a href={socialLinks[social]}>{social}</a> )}
-        </div>
-    )
-}
+  const footer = "© All rights are reserved | 2020 ";
 
-export default Footer
+  return (
+    <BottomBar>
+      <Copyright>{footer}</Copyright>
+      <SocialICons>
+        {social.map(({ id, icon, link, handle }) => (
+          <SocialICons
+            key={id}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={icon} alt={handle} />
+          </SocialICons>
+        ))}
+      </SocialICons>
+    </BottomBar>
+  );
+};
+
+export default Footer;

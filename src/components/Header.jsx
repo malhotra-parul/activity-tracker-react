@@ -6,12 +6,12 @@ const AppBar = styled.nav`
     background: #fbfbfe;
     color: #1a0e45;
     width: 80%;
-    height: 12vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    box-shadow: 0 7px 15px -12px rgba(25,4,69,0.1);
+    box-shadow: 0 7px 15px -8px rgba(25,4,69,0.1);
 `
 
 const Title = styled.span`
