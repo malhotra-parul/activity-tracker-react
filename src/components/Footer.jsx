@@ -20,10 +20,16 @@ const Copyright = styled.span`
   font-size: 1em;
 `;
 
-const SocialICons = styled.a`
+const SocialICons = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const SocialLinks = styled.a`
+display: flex;
+justify-content: space-between;
+align-items: center;
 `;
 
 const Image = styled.img`
@@ -60,14 +66,14 @@ const Footer = () => {
       <Copyright>{footer}</Copyright>
       <SocialICons>
         {social.map(({ id, icon, link, handle }) => (
-          <SocialICons
+          <SocialLinks
             key={id}
             href={link}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image src={icon} alt={handle} />
-          </SocialICons>
+          </SocialLinks>
         ))}
       </SocialICons>
     </BottomBar>

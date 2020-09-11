@@ -1,9 +1,10 @@
 import React from 'react'
 
-const UserCard = () => {
+const UserCard = ({ name, tz, activity}) => {
     return (
-        <div>
-            
+        <div >
+            <h3>{name}</h3>
+            <h6>{tz}</h6>
         </div>
     )
 }
