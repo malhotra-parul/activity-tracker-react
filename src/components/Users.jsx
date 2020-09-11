@@ -15,8 +15,8 @@ const UserWrapper = styled.div`
 
 const Users = () => {
   const userList = data.members.map(
-    ({ id, real_name, tz, activity_periods }) => (
-      <UserCard key={id} name={real_name} tz={tz} activity={activity_periods} />
+    ({ id, real_name, tz, activity_periods, photo }) => (
+      <UserCard key={id} name={real_name} tz={tz} activity={activity_periods} photo={photo}/>
     )
   );
   console.log(userList);

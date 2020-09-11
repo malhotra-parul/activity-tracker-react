@@ -1,9 +1,13 @@
+import photoOne from "./assets/users/humaaans(6).png";
+import photoTwo from "./assets/users/humaaans(5).png";
+
 const data = {
 	"ok": true,
 	"members": [{
 			"id": "W012A3CDE",
 			"real_name": "Egon Spengler",
 			"tz": "America/Los_Angeles",
+			"photo": photoOne,
 			"activity_periods": [{
 					"start_time": "Feb 1 2020  1:33PM",
 					"end_time": "Feb 1 2020 1:54PM"
@@ -22,6 +26,7 @@ const data = {
 			"id": "W07QCRPA4",
 			"real_name": "Glinda Southgood",
 			"tz": "Asia/Kolkata",
+			"photo": photoTwo,
 			"activity_periods": [{
 					"start_time": "Feb 1 2020  1:33PM",
 					"end_time": "Feb 1 2020 1:54PM"
