@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Name, Underline, Grid, Data, NoActivity, DataHeader } from "./styles";
 import moment from "moment";
 
@@ -10,10 +10,10 @@ const Activity = ({ activity, selectedDate }) => {
         selectedDate.format("YYYY-MM-DD")
     )
     .map((i) => (
-      <>
+      <Fragment key={i}>
         <Data>{i.start_time.slice(11)}</Data>
         <Data>{i.end_time.slice(11)}</Data>
-      </>
+      </Fragment>
     ));
 
   return (

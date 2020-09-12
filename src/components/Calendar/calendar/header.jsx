@@ -18,9 +18,9 @@ export default function CalendarHeader({ value, onChange, highlightedDates }) {
     return value.clone().add(1, "month");
   }
 
-  function thisMonth() {
-    return value.isSame(new Date(), "month");
-  }
+  // function thisMonth() {
+  //   return value.isSame(new Date(), "month");
+  // }
 
   return (
     <div className="header">

@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesome from "react-fontawesome";
-import { Close, Overlay, Content } from "./styles.js";
+import { Overlay, Content } from "./styles.js";
 
 const Modal = ({ showModal, handleClose, children }) => {
   const handleCloseButton = (e) => {

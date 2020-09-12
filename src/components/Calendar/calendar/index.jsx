@@ -8,6 +8,7 @@ export default function Calendar({ value, onChange, highlightedDates }) {
 
   useEffect(() => {
     setCalendar(buildCalendar(value));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   function buildCalendar(date) {
@@ -38,9 +39,9 @@ export default function Calendar({ value, onChange, highlightedDates }) {
     return value.isSame(day, "day");
   }
 
-  function beforeToday(day) {
-    return moment(day).isBefore(new Date(), "day");
-  }
+  // function beforeToday(day) {
+  //   return moment(day).isBefore(new Date(), "day");
+  // }
 
   function isToday(day) {
     return moment(new Date()).isSame(day, "day");
@@ -48,24 +49,18 @@ export default function Calendar({ value, onChange, highlightedDates }) {
 
   function dayStyles(day) {
     // // if (beforeToday(day)) return "before";
-    // highlightedDates.map((highlightedDay) => {
-    //   return moment(highlightedDay).format("YYYY") === day.format("YYYY") &&
-    //     moment(highlightedDay).format("MM") === day.format("MM")
-    //     ? "highlight"
-    //     : "";
-    // });
     if (isSelected(day)) return "selected";
     if (isToday(day)) return "today";
     return "";
   }
 
-  function currMonthName() {
-    return value.format("MMMM");
-  }
+  // function currMonthName() {
+  //   return value.format("MMMM");
+  // }
 
-  function currYear() {
-    return value.format("YYYY");
-  }
+  // function currYear() {
+  //   return value.format("YYYY");
+  // }
 
   return (
     <div className="calendar">
@@ -89,15 +84,13 @@ export default function Calendar({ value, onChange, highlightedDates }) {
                 }}
               >
                 <div className={dayStyles(day)}>
-                  {/* <div className="highlight"> */}
-                  {}
                   {day.format("D").toString()}
                   {highlightedDates.map((highlightedDay) => {
                     return moment(highlightedDay).format("YYYY") ===
                       day.format("YYYY") &&
                       moment(highlightedDay).format("MM") === day.format("MM") && 
                       day.format("D") === moment(highlightedDay).format('D')
-                  ? <span >{" "}📣</span>
+                  ? <span role="img" aria-label="Activity">{" "}📣</span>
                       : "";
                   })}
                 </div>
