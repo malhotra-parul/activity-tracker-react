@@ -11,8 +11,7 @@ const UserCard = ({ name, tz, activity, photo }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState(moment("2020-02-01"));
 
-  const handleClick = (e) => {
-    console.log(e.target);
+  const handleClick = () => {
     setShowModal(true);
   };
 
