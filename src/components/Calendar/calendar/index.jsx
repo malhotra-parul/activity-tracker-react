@@ -68,8 +68,8 @@ export default function Calendar({ value, onChange, highlightedDates }) {
 
       <div className="body">
         <div className="day-names">
-          {["s", "m", "t", "w", "t", "f", "s"].map((d) => (
-            <div className="week">{d}</div>
+          {["s", "m", "t", "w", "t", "f", "s"].map((d, index) => (
+            <div className="week"  key={index}>{d}</div>
           ))}
         </div>
         {calendar.map((week, wi) => (
@@ -83,14 +83,14 @@ export default function Calendar({ value, onChange, highlightedDates }) {
                   onChange(day);
                 }}
               >
-                <div className={dayStyles(day)}>
+                <div className={dayStyles(day)} >
                   {day.format("D").toString()}
-                  {highlightedDates.map((highlightedDay) => {
+                  {highlightedDates.map((highlightedDay, ind) => {
                     return moment(highlightedDay).format("YYYY") ===
                       day.format("YYYY") &&
                       moment(highlightedDay).format("MM") === day.format("MM") && 
                       day.format("D") === moment(highlightedDay).format('D')
-                  ? <span role="img" aria-label="Activity">{" "}📣</span>
+                  ? <span key={ind} role="img" aria-label="Activity">{" "}📣</span>
                       : "";
                   })}
                 </div>
