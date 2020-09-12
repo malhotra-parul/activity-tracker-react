@@ -1,9 +1,9 @@
 # Activity Tracker
 
+[Visit Live Link here](https://activity-tracker-react.vercel.app/)
 A tiny project app where users can check out their actvities duration using a custom Calendar.
 
 ![Demo](https://s8.gifyu.com/images/ezgif.com-gif-maker6847337fe9bb1d98.gif)
-[Visit Live Link here](https://activity-tracker-react.vercel.app/)
 
 ## Features
 
