@@ -1,7 +1,8 @@
 import photoOne from "./assets/users/humaaans(6).png";
 import photoTwo from "./assets/users/humaaans(5).png";
+import moment from "moment";
 
-const data = {
+export const data = {
 	"ok": true,
 	"members": [{
 			"id": "W012A3CDE",
@@ -44,4 +45,8 @@ const data = {
 	]
 };
 
-export default data;
+export const activityDates = data.members.map(member => {
+	return member.activity_periods.map(({start_time}) => {
+		return moment(start_time.slice(0,12)).format("YYYY-MM-DD");
+	})
+})[0];
